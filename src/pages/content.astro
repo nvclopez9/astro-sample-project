@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+const cards = [
+  {
+    title: 'Fast Performance',
+    content: 'Astro ships zero JavaScript by default for lightning-fast performance.',
+    image: '/speed.svg',
+  },
+  
+  {
+    title: 'Framework Agnostic',
+    content: 'Integrate React, Vue, Svelte, and more effortlessly.',
+    image: '/angular.png',
+  },{
+    title: 'Component Islands',
+    content: 'Use JavaScript only where it’s needed with Astro’s islands architecture.',
+    image: '/div.svg',
+  },{
+    title: 'Scalable Design',
+    content: 'Astro makes building scalable and maintainable websites easier than ever.',
+    image: '/seo.svg',
+  },
+  {
+    title: 'SEO Friendly',
+    content: 'Generate static HTML for better search engine optimization.',
+    image: '/Seo.png',
+  },
+  
+  {
+    title: 'Dynamic Imports',
+    content: 'Use only the code you need, dynamically importing components as required.',
+    image: '/idea.svg',
+  },
+];
+---
+<BaseLayout title="Why Use Astro | Astro Project">
+  <section class="content-hero">
+    <h2>Why Choose Astro?</h2>
+    <p>
+      Discover the unique features of Astro that make building websites fast, scalable, and enjoyable.
+    </p>
+  </section>
+
+  <section class="cards-container">
+    {cards.map(card => (
+      <Card {...card} />
+    ))}
+  </section>
+</BaseLayout>
